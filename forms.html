@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+    <h2>User Registration Form</h2>
+    <form>
+  <label>Name:</label>
+  <input type="text" ><br>
+
+  <label>Email:</label>
+  <input type="email" required><br>
+
+  <label>Password:</label>
+  <input type="password"><br>
+
+  <label>Date of Birth:</label>
+  <input type="date"><br>
+
+  <label>Profile Picture</label>
+  <input type="file"><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+  <h2>User Preferences</h2>
+  <form>
+    <label>About me</label><br>
+    <textarea rows="4" cols="40">
+        write about yourself
+    </textarea><br>
+    <label>Country</label><br>
+    <select>
+        <option value="EGY">Egypt</option>
+        <option value="jo">Jordan</option>
+        <option value="Trk">Turkey</option>
+    </select><br>
+     <fieldset>
+    <legend>Contact Preference</legend><br>
+    <input type="radio" name="contact" value="email"> Email
+    <input type="radio" name="contact" value="phone"> Phone
+  </fieldset>
+  </form><br>
+
+  <form action="https://example.com/submit" method="POST" target="_blank" autocomplete="off">
+    <label>Email</label>
+    <input type="email" required>
+    <input type="submit" value="submit">
+
+  </form><br>
+
+  <form>
+    <h2>Survey Form</h2><br>
+    <label>Username</label><br>
+    <input type="text" maxlength="10" required><br>
+    <label> Age</label><br>
+    <input type="number" min="18" max="60"><br>
+    <label>Favorite Programming Language:</label><br>
+  <input type="text" list="langs">
+  <datalist id="langs">
+    <option value="HTML">
+    <option value="CSS">
+    <option value="JavaScript">
+    <option value="Python">
+  </datalist>
+
+  </form>
+
+
+</head>
+<body>
+    
+</body>
+</html>
