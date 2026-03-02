@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3-1</title>
+    <style>
+        body {
+            background-color: #E3E3FF;
+        }
+
+        .page{
+            display: grid;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+           
+        }
+        .container {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            background-color: #8887C5;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 5px 5px #7777ac;
+            border-radius: 7px;
+        }
+        input{
+            width: 95%;
+            height: 35px;
+            border-radius: 7px;
+            border: white;
+        }
+
+        .name{width: 45%;}
+        .check{
+            width: 5%;
+            height: 12px;
+           
+        }
+        button{
+          width: 80%;
+          height: 30px; 
+          color: rgb(122, 122, 122); 
+          background-color: rgb(141, 141, 141); 
+           border-radius: 7px;
+            border: rgb(141, 141, 141);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div></div>
+        <div class="container">
+        <h2> Sign Up</h2>
+        <form>
+            <input class="name"type="text" placeholder="First Name"> &nbsp; <input class="name" type="text" placeholder="Last Name">
+            <br><br>
+            <input type="email" placeholder="Email"><br><br>
+            <input type="Password" placeholder="Password"><br><br>
+            <input type="password" placeholder="Confirm Password"><br><br>
+            <br>
+            <input class="check" type="checkbox">I accept the Terms of Use & Privacy Policy
+            <br><br>
+            
+        </form>
+        <button>Sign Up</button><br>
+        <div>Already have an account?<a href=""style="color: white;">Login here</a></div>
+        <br>
+        <div>Copyright @ YourCompany.com</div>
+    </div>
+    </div>
+</body>
+
+</html>

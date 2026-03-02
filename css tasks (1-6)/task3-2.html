@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3-2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+    body {
+        background-image: linear-gradient(to left, #B700C4, #8400CD);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        /* horizontal center */
+        align-items: center;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 600Px;
+        height: 400px;
+        background-color: white;
+        border-radius: 20px;
+        border: white;
+        /* justify-content: center; */
+        align-items: center;
+        justify-items: center;
+    }
+
+    img {
+
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+    }
+
+    input {
+        background-color: #E5E5E5;
+        border: #E5E5E5;
+        border-radius: 15px;
+        height: 30px;
+        width: 90%;
+    }
+
+    button{
+        color: white;
+        background-color:#1FCC44 ;
+        border:#1FCC44;
+     border-radius: 15px;
+        height: 30px;   
+        width: 76%;
+    }
+
+    .input-box {
+        position: relative;
+      
+    }
+
+    .input-box i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: gray;
+    }
+    .input-box input {
+    padding-left:35px;
+    
+}
+.secondCol{ 
+    width: 100%;
+    height: 100%;
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;}
+</style>
+
+<body>
+    <div class="container">
+        <div class="firstCol">
+
+            <img
+                src="https://a0.anyrgb.com/pngimg/564/1932/ui-design-laptop-flat-avatars-flat-avatar-laptop-computer-laptops-flats-flat-flat-icon-notebook-thumbnail.png">
+
+        </div>
+        <div class="secondCol">
+            <h2>Member Login</h2>
+            <br>
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <br>
+            <br>
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="*****">
+            </div><br><br>
+            <button >LOGIN</button>
+            <br>
+            <br>
+            <div>Forgot <span style="color: #1FCC44;">Username / Password ?</span></div>
+            <div style="color: #1FCC44; justify-self:end">Create your account -> </div>
+        </div>
+    </div>
+</body>
+
+</html>
