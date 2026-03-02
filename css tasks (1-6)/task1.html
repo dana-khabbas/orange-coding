@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h3 {
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr;
+            grid-template-rows: repeat(4,30px);
+            border: 1px solid black;
+            gap: 3px;
+            padding: 5px;
+            /* justify-content:space-around; */
+        }
+        .title{
+            background-color: yellow;
+            text-align: end;
+            font-weight: bolder;
+        }
+        .item{
+            border: 1px solid black;
+        }
+        #last{
+            grid-column:1/4;
+           text-align: center;
+           font-weight: bolder;
+        }
+        #NA{
+background-color: rgb(247, 194, 247);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Ninja Details</h3>
+    <hr>
+    <div class="container">
+        <div class="title item"> Name</div>
+        <div class="title item"> Age</div>
+        <div class="title item"> Grade</div>
+        <div class="item" id="NA">Ninja A</div>
+        <div class="item">18</div>
+        <div class="item">B</div>
+        <div class="item">Ninja B</div>
+        <div class="item">23</div>
+        <div class="item">C</div>
+        <div class="item">Ninja C</div>
+        <div class="item">22</div>
+        <div class="item">A</div>
+        <div class="item" id="last">Ninja C - the best learner!</div>
+    </div>
+</body>
+
+</html>

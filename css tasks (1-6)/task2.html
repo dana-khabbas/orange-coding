@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task2</title>
+    <style>
+        .page {
+            display: grid;
+            grid-template-rows: 1fr auto 1fr 1fr;
+             height: 100vh; 
+        }
+
+        img {
+            width: 100px;
+
+        }
+
+        .row2 {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 5px 3px grey;
+            border-radius: 5px;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 5px;
+        }
+
+        input {
+            width: 90%;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        button {
+            justify-self: center;
+            align-self: center;
+            border-radius: 20px;
+            width: 90%;
+            height: 40px;
+        }
+
+        .signin {
+            color: white;
+            background-color: blue;
+            border: blue;
+
+        }
+
+        .signapp {
+            background-color: white;
+        }
+        a{
+            color: blue;
+        }
+        .row3{
+            margin: 20px;
+            justify-self: center;
+            align-self: center;}
+        
+        footer{
+            color: gray;
+            font-weight: lighter;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <img src="https://www.edigitalagency.com.au/wp-content/uploads/Linkedin-logo-blue-png-large-size.png">
+        <div class="row2">
+            <div class="card">
+                <h2>Sign In</h2>
+                <div>Stay updated on your professienal world</div><br>
+                <form>
+                    <input type="email" placeholder="Email or Phone">
+                    <br><br>
+                    <input type="password" placeholder="Password"><br>
+                    <br>
+               
+                <a href="">Forgot password?</a>
+                <br><br>
+                <button class="signin">Sign in</button>
+                <hr>
+                <button  class="signapp">Sign in with Apple</button>
+ </form>
+            </div>
+        </div>
+        <div class="row3">New to LinkedIn? <a href="">Join now</a></div>
+        
+            <footer>
+
+                <span style="font-weight: bold;">LinkedIn &copy;2021</span>
+                <span>User Agrement</span>
+                <span>Privacy Pospancy</span>
+                <span>Community Guidelines </span>
+                <span>Cookie policy</span>
+                <span>Copyright policy</span>
+                <span>Send Feedback</span>
+                <span>Language</span>
+            </footer>
+        
+    </div>
+</body>
+
+</html>
