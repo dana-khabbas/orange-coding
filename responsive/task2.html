@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtd=device-width, initial-scale=1.0">
+    <title>task2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            background-color: #F4F5F7;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.7em;
+            padding-left: 5em;
+            padding-right: 5em;
+        }
+
+        .topRight {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #F4F5F7;
+            border: 0;
+            width: 1em;
+            height: 1em;
+        }
+
+        .topLeft {
+            display: flex;
+            align-items: center;
+            gap: 3em;
+        }
+
+        .profilePhoto {
+            border-radius: 50%;
+            width: 2em;
+            height: 2em;
+        }
+
+        .page {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+
+        }
+
+        .sideBar {
+            padding: 1em;
+            background-color: #2A3E59;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sideItems {
+            color: white;
+            padding: 1em;
+            display: flex;
+            gap: 1em;
+            cursor: pointer;
+        }
+
+        .row1 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5em;
+            margin: 2em;
+        }
+
+        .card {
+            color: white;
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            gap: 1vh;
+            padding: 1em;
+            padding-bottom: 3em;
+            width: 18vw;
+            height: 16vh;
+            border-radius: 5%;
+        }
+
+        .cardInfo {
+            display: flex;
+            gap: 7vh;
+            font-weight: bolder;
+            font-size: x-large;
+            align-items: center;
+
+        }
+
+        .row2 {
+            margin: 2em;
+            background-color: white;
+            /* width:  100vw; */
+            /* height: 100vh; */
+            padding: 1em;
+            border: 1px solid grey;
+            /* border-collapse: collapse; */
+            border-radius: 2%;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+
+        .tHead {
+            background-color: #F0F1F4;
+        }
+
+        .aboveTable {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            display: flex;
+            gap: 1em;
+
+        }
+
+        tr {
+            height: 4vh;
+        }
+
+        /* for tablet */
+        @media (max-width: 992px) {
+            .page {
+                grid-template-columns: 0.8fr 4fr;
+            }
+
+            .row1 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 768px) {
+
+            .page {
+                grid-template-columns: 1fr;
+            }
+
+            .sideBar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 250px;
+                height: 100vh;
+                z-index: 5;
+            }
+
+            .sideBar.show {
+                display: flex;
+            }
+
+            .cardTitle {
+                font-size: small;
+            }
+
+            .cardInfo {
+                font-size: medium;
+                gap: 1vh;
+            }
+
+            .row1 {
+                grid-template-columns: 1fr;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="topLeft">
+            <button class="btn"  onclick="showSidebar()"><i class="fa fa-bars"></i></button>
+            <h2 style="display: inline;">Dashboard</h2>
+        </div>
+        <div class="topRight">
+
+
+            <span><img class="profilePhoto"
+                    src="https://backend.royanews.tv/imageserv/Size728Q70/english/news/20260209/69891ab1975911770592945.jpg"></span>
+            <span>
+                Mousa Altaamari
+            </span>
+
+        </div>
+    </header>
+    <hr>
+    <div class="page">
+        <div class="sideBar" id="mySidebar">
+
+            <div class="sideItems" style="background-color: #336ED7;">
+                <i class="fa fa-home"></i>
+                <div>Dashboard</div>
+            </div>
+
+            <div class="sideItems">
+                <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                <div>Anayltics</div>
+            </div>
+            <hr>
+            <div class="sideItems">
+                <i class="fa fa-tasks" aria-hidden="true"></i>
+                <div>Projects</div>
+            </div>
+            <hr>
+            <div class="sideItems">
+
+                <i class="fa fa-check-square" aria-hidden="true"></i>
+                <div>Tasks</div>
+            </div>
+            <hr>
+            <div class="sideItems">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+                <div>Settings</div>
+            </div>
+
+        </div>
+        <div>
+            <div class="row1">
+                <!-- **************card 1************** -->
+
+                <div class="card" style="background-color:#316FDE ;">
+                    <div class="cardTitle">Total users</div>
+                    <div class="cardInfo">
+
+                        <div>1,250</div>
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <!-- **************card 2************** -->
+                <div class="card" style="background-color:#2CA56F ;">
+                    <div class="cardTitle">Sales</div>
+                    <div class="cardInfo">
+
+                        <div>$8,750</div>
+                        <i class="fa fa-usd" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <!-- **************card 3************** -->
+                <div class="card" style="background-color:#F89D3B;">
+                    <div class="cardTitle">New Orders</div>
+                    <div class="cardInfo">
+
+                        <div>120</div>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <!-- **************card 4************** -->
+                <div class="card" style="background-color:#7568CF;">
+                    <div class="cardTitle">Support Calls</div>
+                    <div class="cardInfo">
+
+                        <div>35</div>
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row2">
+                <h2>Recent Orders</h2>
+                <hr>
+                <div class="aboveTable">
+                    <div> Filter By</div>
+                    <select>
+                        <option> Order ID</option>
+                        <option> Status</option>
+                    </select>
+                </div>
+                <table>
+                    <tr class="tHead">
+                        <td>Order ID</td>
+                        <td>Customer NAme</td>
+                        <td>Status</td>
+                        <td>Total</td>
+                    </tr>
+                    <tr>
+                        <td>#10001</td>
+                        <td>John Doe</td>
+                        <td>Paid</td>
+                        <td>$120.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10002</td>
+                        <td>Jane Smith</td>
+                        <td>Pending</td>
+                        <td>$75.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10003</td>
+                        <td>Mike Johnson</td>
+                        <td>Paid</td>
+                        <td>$45.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10004</td>
+                        <td>Sarah Brown</td>
+                        <td>Pending</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10004</td>
+                        <td>Sarah Brown</td>
+                        <td>Pending</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10004</td>
+                        <td>Sarah Brown</td>
+                        <td>Pending</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10004</td>
+                        <td>Sarah Brown</td>
+                        <td>Pending</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10004</td>
+                        <td>Sarah Brown</td>
+                        <td>Pending</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10004</td>
+                        <td>Sarah Brown</td>
+                        <td>Pending</td>
+                        <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>#10004</td>
+                        <td>Sarah Brown</td>
+                        <td>Pending</td>
+                        <td>$200.00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script>
+            function showSidebar() {
+                document.getElementById("mySidebar").classList.toggle("show");
+            }
+        </script>
+</body>
+
+</html>
