@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1em;
+        }
+
+        .logo {
+            object-fit: scale-down;
+        }
+
+        .topRight {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .hero {
+            margin: 2vw;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .blurred-image {
+            position: absolute;
+            /* width: 100%;
+            height: 100%; */
+            object-fit: cover;
+            z-index: 1;
+            filter: blur(1px);
+            object-position: start;
+
+        }
+
+        .txtImage {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+            text-align: center;
+            z-index: 5;
+        }
+
+        button {
+            color: white;
+            background-color: #7ADE51;
+            height: 6%;
+            width: 25%;
+            border: #7ADE51;
+            border-radius: 4px;
+            padding: 1%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tit1 {
+            display: flex;
+            justify-content: center;
+            margin: 5vw;
+        }
+
+        .rows {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-between;
+            align-items: center;
+            justify-items: center;
+            padding: 2vw;
+            padding-right: -2vw;
+            gap: 1vw;
+        }
+
+        .card {
+
+            width: 15vw;
+            /* height: 10vw; */
+            box-shadow: 0 0 5px gray;
+            border-radius: 3px;
+            padding: 1vw;
+            background-color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5vw;
+
+        }
+
+        .card-image {
+            height: 10vw;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card h3 {
+            font-size: 1.2vw;
+            margin-bottom: 0.5vw;
+        }
+
+        .card p {
+            font-size: 0.9vw;
+            color: gray;
+        }
+
+        .card:hover {
+            background-color: #D6DEE5;
+        }
+
+        .about {
+            padding: 4vw;
+        }
+
+        .tit2 {
+            text-align: center;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3vw;
+        }
+
+        .about-img {
+            width: 40%;
+            border-radius: 8px;
+        }
+
+        .about-text {
+            width: 60%;
+            font-size: 1vw;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border-top: 1px solid #86a9c7; */
+            background-color: #D6DEE5;
+        }
+
+        @media (max-width: 992px) {
+
+            .rows {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-img {
+                width: 70%;
+            }
+
+            .about-text {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+
+            .rows {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .topRight {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .txtImage {
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+            }
+
+            .about-text {
+                font-size: 3vw;
+            }
+
+            .card h3 {
+                font-size: 3vw;
+            }
+
+            .card p {
+                font-size: 2vw;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <img class="logo" height="15vw" width="100vw"
+            src="https://peaksiouxcity.com/wp-content/uploads/2022/11/Logo-300x247.png">
+        <div class="topRight">
+            <span>Home</span>
+            <span>Services</span>
+            <span>About</span>
+            <span>Contact</span>
+        </div>
+
+    </header>
+    <div class="hero">
+
+        <img class="blurred-image" width="100%" height="190vw"
+            src="https://images.squarespace-cdn.com/content/v1/611317c4b0070247030f7fc3/1673052642404-N4RJ2TU9R09AYF0IPE2W/unsplash-image-yUWKDfPLp6w.jpg">
+
+        <div class="txtImage">
+            <h2>Peak Performance Gear</h2>
+            <h3>Equipping your next great adventure with premium hiking tools</h3>
+            <button> Explore the Collection</button>
+        </div>
+    </div>
+    <div class="tit1">
+        <h2>Our Products</h2>
+    </div>
+    <div class="rows">
+        <div class="card">
+            <div class="card-image"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq6PbQTb4q5Vjb4DJ2x0BWyaagNGEh8Hl8zg&s');">
+            </div>
+            <h3>Trailblazer Backpack</h3>
+            <p>Durable, water-resistant backpack for all-day hikes.</p>
+        </div>
+        <div class="card">
+            <div class="card-image"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBxjHkCU17ysdr3SRlUHk-DlQgAw7P42Dh_w&s');">
+            </div>
+
+            <h3>Summit Hiking Boots</h3>
+            <p>Lightweight boots with excellent grip on rocky terrain.</p>
+        </div>
+        <div class="card">
+            <div class="card-image"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVIFoa8BMT2lInRxkzCMUHTy1fK6Q_GzOM_g&s');">
+            </div>
+
+
+            <h3>All-Weather Jacket</h3>
+            <p>Protects you from rain, wind, and cold temperatures.</p>
+        </div>
+        <div class="card">
+            <div class="card-image"
+                style="background-image: url('https://www.cvlife.com/cdn/shop/files/CVLIFEHydrationBackpackwith3LTPUWaterBladder.jpg?v=1702263665');">
+            </div>
+
+
+            <h3>Hydration Pack</h3>
+            <p>Stay refreshed with an easy-access water reservoir.</p>
+        </div>
+        <div class="card">
+            <div class="card-image"
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTecjAETJpJHmi5uAp45zXSi7_zNkm-WTQVTg&s');">
+            </div>
+            <h3>Adventure Headlamp</h3>
+            <p>Bright LED light for night hiking or camping trips.</p>
+        </div>
+        <div class="card">
+            <div class="card-image"
+                style="background-image: url('https://www.yotaverse.com/cdn/shop/files/image_2dac3bbf-c252-4d09-8071-87dc6d729f33_720x@2x.jpg?v=1691685621');">
+            </div>
+
+            <h3>Portable Camping Stove</h3>
+            <p>Compact stove for cooking meals in the wild.</p>
+        </div>
+    </div>
+    <hr>
+    <div class="about">
+
+        <div class="tit2">
+            <h2>About Us</h2>
+        </div>
+
+        <div class="about-content">
+            <img class="about-img" src="https://images.unsplash.com/photo-1501555088652-021faa106b9b">
+
+            <div class="about-text">
+                <p>
+                    At Peak Performance Gear, we believe that every adventure begins with the right equipment.
+                    Our mission is to provide high-quality hiking and outdoor gear designed for durability,
+                    comfort, and performance.
+                </p>
+
+                <p>
+                    Founded by outdoor enthusiasts, our company understands the challenges of the wild.
+                    From mountain trails to forest camping, we carefully select and design products
+                    that help you explore with confidence.
+                </p>
+
+                <p>
+                    Whether you're a beginner hiker or a seasoned explorer, we are here to equip
+                    your journey and inspire your next great adventure.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>&copy; 2026 <strong>Peak Performance Gear</strong>. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
