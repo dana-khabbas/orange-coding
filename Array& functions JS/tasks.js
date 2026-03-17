@@ -265,3 +265,70 @@ function findShortestWord(x20){
 
 let x20=["marwan","alex","ahmad","ali","sara"];
 findShortestWord(x20);
+
+// ### Task 21 — `sortByLength(arr)`
+// Sort words **by their length**.
+function sortByLength(x21){
+x21.sort((a,b)=>a.length - b.length);
+console.log(x21);
+}
+let x21=["apple","hi","banana"];
+sortByLength(x21);
+
+// ### Task 22 — `removeEverySecond(arr)`
+// Remove **every second element** from the array.
+function removeEverySecond(x22){
+    x22=x22.filter((item, index) => index % 2 == 0);
+    console.log(x22);
+}
+let x22=[1,2,3,4,5,6];
+removeEverySecond(x22);
+
+// ### Task 23 — `sumEvenNumbers(arr)`
+// Return the **sum of even numbers**.
+function sumEvenNumbers(x23){
+
+   evens=x23.filter(x=>x%2==0);
+    result=evens.reduce((sum,num)=>{return sum+num;},0);
+    console.log(result);
+}
+let x23=[1,2,3,4,5,6];
+sumEvenNumbers(x23);
+
+// ### Task 24 — `sumOddIndex(arr)`
+// Return the **sum of numbers in odd indexes**.
+function sumOddIndex(x24){
+    x24=x24.filter((item, index) => !(index % 2 == 0));
+    result=x24.reduce((sum,num)=>{return sum+num;},0);
+    console.log(result);
+}
+let x24=[1,2,3,4,5,6];
+sumOddIndex(x24);
+
+// ### Task 25 — `reverseWithoutReverse(arr)`
+// Reverse the array **without using reverse()**.
+function reverseWithoutReverse(x25){
+    let x25_rev=[];
+for(let i=0;i<x25.length;i++){
+x25_rev.unshift(x25[i]);
+}
+console.log(x25_rev);
+}
+let x25=[1,2,3,4,5,6];
+reverseWithoutReverse(x25);
+
+// ### Task 26 — `findMissingNumber(arr)`
+// The array contains numbers from **1 to N**, but one number is missing.
+function findMissingNumber(x26){
+ 
+    x26.sort((a, b) => a - b);
+    for(let x=1;x<=x26.length+1;x++){
+        if (x!=x26[x-1]){
+             console.log(x);
+             break;
+        }
+    }
+   
+}
+let x26=[1,2,3,5,6];
+findMissingNumber(x26);
