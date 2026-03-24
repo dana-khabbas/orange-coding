@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gr {
+            color: green;
+        }
+
+        .bl {
+            color: black;
+        }
+
+        .rd {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="b+">+</button>
+    <button id="b-">-</button>
+    <div id="num"></div>
+
+    <script>
+        let number = 0;
+        let addBtn = document.getElementById("b+");
+        let minBtn = document.getElementById("b-");
+        let num = document.getElementById("num");
+        num.textContent = number;
+        Color();
+
+        addBtn.addEventListener("click", () => {
+            number++;
+            num.textContent = number;
+            Color();
+        });
+        minBtn.addEventListener("click", () => {
+            number--;
+            num.textContent = number;
+            Color()
+        });
+        function Color() {
+            num.classList.remove("gr", "bl", "rd");
+            if (number == 0) {
+                num.classList.add("bl")
+            } else if (number > 0) {
+                num.classList.add("gr")
+            }
+            else {
+                num.classList.add("rd")
+            }
+        }
+    </script>
+</body>
+
+</html>
