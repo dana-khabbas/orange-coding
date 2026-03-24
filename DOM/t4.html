@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Page header </h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci, impedit. Officiis quam exercitationem iusto perferendis possimus voluptas laboriosam mollitia dolores, laborum delectus molestiae id excepturi, totam deleniti quia placeat architecto.</p>
+    <div> hope to see you soon</div>
+
+    <script>
+        let head1=document.getElementsByTagName("h1")[0];
+        let head2=document.createElement("h2");
+        head2.textContent="this is the second title ";
+        head2.classList.add("newHead");
+        document.body.replaceChild(head2,head1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="list">
+        <ul>
+            <li>coffee</li>
+            <li> tea</li>
+            <li>hot coco</li>
+        </ul>
+    </div>
+    <script>
+        let list = document.body.children[0]; 
+        let ul = list.children[0];            
+        let Li1 = ul.children[0];              
+        let Li2 = Li1.nextElementSibling;  
+
+        console.log(Li2.textContent); 
+    </script>
+</body>
+
+</html>
