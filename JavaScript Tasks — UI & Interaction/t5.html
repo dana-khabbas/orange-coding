@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .changeColor {
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        let div = document.getElementsByTagName("div")[0];
+        // div.addEventListener("change", () => {
+        //     div.classList.toggle("changeColor");
+        // })
+
+        setInterval( () => {
+            div.classList.toggle("changeColor");
+        }, 1000)
+
+    </script>
+</body>
+
+</html>

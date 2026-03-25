@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="fonts" name="fonts">
+        <option value="Times">Times New Roman</option>
+        <option value="Arial">Arial</option>
+</select>
+
+        <select id="fontSize" name="fontSize">
+            <option value="12px">12px</option>
+            <option value="16px">16px</option>
+            <option value="20px">20px</option>
+            <option value="24px">24px</option>
+        </select>
+        <input type="checkbox" id="italic">
+        italic
+        <input type="checkbox" id="bold">
+        bold
+        <input type="checkbox" id="underline">
+        Underline
+        <br>
+        <br>
+        <br>
+        <textarea id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, similique ipsam quo repellendus id earum veniam, in accusamus laborum, repellat ullam tempore! Quas debitis cum a? Odit quo dolorem eos.</textarea>
+
+        <script>
+         let text = document.getElementById("text");
+        let fonts = document.getElementById("fonts");
+        let fontSize = document.getElementById("fontSize");
+        let italic = document.getElementById("italic");
+        let bold = document.getElementById("bold");
+        let underline = document.getElementById("underline");
+
+         fonts.addEventListener("change", () => {
+            text.style.fontFamily = fonts.value;
+        });
+
+
+        fontSize.addEventListener("change", () => {
+            text.style.fontSize = fontSize.value;
+        });
+
+
+        italic.addEventListener("change", () => {
+            text.style.fontStyle = italic.checked ? "italic" : "normal";
+        });
+
+        bold.addEventListener("change", () => {
+            text.style.fontWeight = bold.checked ? "bold" : "normal";
+        });
+
+     
+        underline.addEventListener("change", () => {
+            text.style.textDecoration = underline.checked ? "underline" : "none";
+        });
+        </script>
+</body>
+
+</html>

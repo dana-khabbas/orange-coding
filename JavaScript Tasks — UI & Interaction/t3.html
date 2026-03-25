@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    p {
+        display: none;
+    }
+    .show {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <h2>
+        What is lorem ipsum
+
+    </h2>
+    <button id="btnsh"> show</button>
+    <h2>
+        why do we use it?
+    </h2>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad fugiat unde nihil cupiditate culpa quis eius maxime tempora, doloremque perspiciatis amet nostrum odit itaque vel quo reiciendis id laborum inventore.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore doloribus exercitationem eligendi voluptatibus nemo assumenda. Nostrum vel incidunt illo eius aliquid tempore totam blanditiis? Blanditiis inventore earum quis repellendus voluptatem.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis dolorum doloremque dicta non enim dolor quasi facere cupiditate nisi consequatur aspernatur, hic dolorem natus, amet, alias excepturi facilis dolore laborum!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo modi officia, numquam dicta ipsam reprehenderit soluta saepe. Ratione facere excepturi quis ad quam itaque, ipsam qui. Accusantium quis ullam sit?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium nesciunt in quaerat! Illo quidem sed, culpa pariatur maiores porro fugit nam nesciunt possimus incidunt voluptate facere sit maxime ab. Iste.
+    </p>
+    <button id="btnhi"> hide</button>
+<script>
+    let btnsh=document.getElementById("btnsh")
+    let btnhi=document.getElementById("btnhi")
+    let para=document.getElementsByTagName("p")[0]
+
+btnsh.addEventListener("click", ()=>{
+para.classList.add("show")
+})
+btnhi.addEventListener("click", ()=>{
+para.classList.remove("show")
+})
+</script>
+</body>
+</html>
