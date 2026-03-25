@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive List</title>
+</head>
+<body>
+
+  <input id="input" type="text" placeholder="Enter category">
+  <button id="addBtn">Add</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    let input = document.getElementById("input");
+    let addBtn = document.getElementById("addBtn");
+    let list = document.getElementById("list");
+
+  
+    addBtn.addEventListener("click", () => {
+      let text = input.value;
+
+      let li = document.createElement("li");
+      li.innerHTML = `
+        ${text}
+        <button class="delete">Delete</button>
+      `;
+
+      list.appendChild(li);
+      input.value = "";
+    });
+
+
+    list.addEventListener("click", (e) => {
+      if (e.target.classList.contains("delete")) {
+        e.target.parentElement.remove();
+      }
+    });
+  </script>
+
+</body>
+</html>
