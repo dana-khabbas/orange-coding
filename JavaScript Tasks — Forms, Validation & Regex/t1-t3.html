@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            background-color: #EFEEF1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 120px 200px;
+            gap: 10px 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 10vw;
+            height: 2.5vw;
+            border: 0px;
+            border-radius: 0.7vw;
+            grid-column: span 2;
+            justify-self: center;
+            background-color: #1B78CF;
+            color: white;
+        }
+
+        hr {
+            color: black;
+
+            width: 70%;
+        }
+
+        .down {
+            align-self: self-start;
+        }
+        input{
+            height: 4vw;
+        }
+        small {
+    grid-column: 2;
+    
+}
+    </style>
+</head>
+
+<body>
+    <h3>Basic Info Form</h3>
+    <form id="myForm">
+        First name <input id="firstName" type="text" placeholder="enter your first name"> <br>
+        <small id="fnerror"></small>
+        Last name <input id="secondName" type="text" placeholder="enter your Last name"> <br>
+        <small id="lnerror"></small>
+        Email <input id="formEmail" type="text" placeholder="enter your email"> <br>
+        <small id="emailerror"></small>
+        Mobile number <input id="mob" type="text" placeholder="enter your mobile number">
+        <small id="moberror"></small>
+        <button id="btn" type="submit">Submit</button>
+    </form>
+    <hr>
+    <div id="down">
+        <h4>Submitted data</h4>
+        <div id="fname"></div>
+        <div id="lname"></div>
+        <div id="email"></div>
+        <div id="mob2"></div>
+    </div>
+    <script>
+        let myForm = document.getElementById("myForm");
+        let firstName = document.getElementById("firstName");
+        let secondName = document.getElementById("secondName");
+        let formEmail = document.getElementById("formEmail");
+        let fname = document.getElementById("fname");
+        let lname = document.getElementById("lname");
+        let email = document.getElementById("email");
+        let mob=document.getElementById("mob");
+        let mob2=document.getElementById("mob2");
+
+        let fnerror = document.getElementById("fnerror");
+        let lnerror = document.getElementById("lnerror");
+        let emailerror = document.getElementById("emailerror");
+        let moberror=document.getElementById("moberror");
+
+        let namePattern = /^[A-Za-z]+$/;
+        let emailPattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let mobPattern=/^[0-9]+$/;
+        myForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            let isValid = true;
+
+            fnerror.textContent = "";
+            lnerror.textContent = "";
+            emailerror.textContent = "";
+            moberror.textContent="";
+
+            if (firstName.value === "") {
+                fnerror.textContent = "This field is required";
+                fnerror.style.color = "red";
+                isValid = false;
+            }
+            else if (!namePattern.test(firstName.value)) {
+                fnerror.textContent = "Only letters allowed";
+                fnerror.style.color = "red";
+                isValid = false;
+            }
+
+            if (secondName.value === "") {
+                lnerror.textContent = "This field is required";
+                lnerror.style.color = "red";
+                isValid = false;
+            }
+            else if (!namePattern.test(secondName.value)) {
+                lnerror.textContent = "Only letters allowed";
+                lnerror.style.color = "red";
+                isValid = false;
+            }
+
+            if (formEmail.value === "") {
+                emailerror.textContent = "This field is required";
+                emailerror.style.color = "red";
+                isValid = false;
+            }
+             else if (!emailPattern.test(formEmail.value)) {
+                emailerror.textContent = "Invalid Email";
+                emailerror.style.color = "red";
+                isValid = false;
+            }
+
+            if(mob.value.length!==10){
+                moberror.textContent = "Mobile number must contain 10 digits";
+                moberror.style.color = "red";
+                isValid = false;
+            }
+            else if (!mobPattern.test(mob.value)) {
+                moberror.textContent = "Invalid Mobil Numer";
+                moberror.style.color = "red";
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            fname.textContent = firstName.value;
+            lname.textContent = secondName.value;
+            email.textContent = formEmail.value;
+            mob2.textContent = mob.value;
+
+        })
+    </script>
+</body>
+
+</html>

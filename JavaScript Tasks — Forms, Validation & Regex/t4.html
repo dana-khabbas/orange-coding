@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            border-radius: 20px;
+            box-shadow: 0 0 10px gray;
+            margin: 6vw;
+            width: 50%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 1vw;
+        }
+
+        .boxHead {
+            width: 100%;
+            height: 4vw;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            background-color: #1B78CF;
+            color: white;
+            text-align: center;
+            padding-top: 2vw;
+        }
+
+        .myform {
+            display: grid;
+            grid-template-columns: 180px 200px;
+            gap: 10px 15px;
+            margin-top: 20px;
+        }
+
+        #date,
+        #email,
+        #conEmail,
+        #pass,
+        #conpass,
+        #dateError,
+        #emailError,
+        #conEmailError,
+        #passError,
+        #conPassError {
+            grid-column: span 2;
+        }
+
+        #btn {
+            width: 10vw;
+            height: 2.5vw;
+            border: 0px;
+            border-radius: 0.7vw;
+            grid-column: span 2;
+            justify-self: center;
+            background-color: #1B78CF;
+            color: white;
+            margin: 2vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="boxHead">
+            <div> Registration Form</div>
+        </div>
+        <div class="boxBody">
+            <form class="myform">
+                <label>First Name</label>
+                <label>Last Name</label>
+                <input type="text" id="fname">
+                <input type="text" id="lname">
+                <small id="fnError"></small>
+                <small id="lnError"></small>
+                <label>
+                    Date of Birth
+                </label>
+                <input type="date" id="date">
+                <small id="dateError"></small>
+                <label>Email Address</label>
+                <input type="text" id="email">
+                <small id="emailError"></small>
+                <label>Confirm Email Address</label>
+                <input type="text" id="conEmail">
+                <small id="conEmailError"></small>
+                <label>Password</label>
+                <input type="password" id="pass">
+                <small id="passError"></small>
+                <label>Confirm Password</label>
+                <input type="password" id="conpass">
+                <small id="conPassError"></small>
+                <button type="submit" id="btn">Register</button>
+            </form>
+
+        </div>
+        <div id="msg"> Please fix the errors above to submit the form</div>
+    </div>
+
+    <script>
+        let myform = document.getElementsByClassName("myform")[0];
+        let fname = document.getElementById("fname");
+        let lname = document.getElementById("lname");
+        let date = document.getElementById("date");
+        let email = document.getElementById("email");
+        let conEmail = document.getElementById("conEmail");
+        let pass = document.getElementById("pass");
+        let conpass = document.getElementById("conpass");
+        let msg=document.getElementById("msg");
+
+        let fnError = document.getElementById("fnError");
+        let lnError = document.getElementById("lnError");
+        let dateError = document.getElementById("dateError");
+        let emailError = document.getElementById("emailError");
+        let conEmailError = document.getElementById("conEmailError");
+        let passError = document.getElementById("passError");
+        let conPassError = document.getElementById("conPassError");
+
+
+
+        let namePattern = /^[a-zA-Z]+$/;
+        let emailPattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let passPattern=/^[A-Z](?=(?:.*\d){2,})(?=.*[!@#$%^&*(),.?":{}|<>]).{7,31}$/;
+
+        myform.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            fnError.textContent = "";
+            lnError.textContent = "";
+            dateError.textContent = "";
+            emailError.textContent="";
+            conEmailError.textContent="";
+            passError.textContent="";
+            conPassError.textContent="";
+            msg.style.color = "black";
+
+
+            if (!namePattern.test(fname.value)) {
+                fnError.textContent = "Name must contain letters only";
+                fnError.style.color = "red";
+                isValid = false;
+            }
+            if (!namePattern.test(lname.value)) {
+                lnError.textContent = "Name must contain letters only";
+                lnError.style.color = "red";
+                isValid = false;
+            }
+            if (date.value === "") {
+                dateError.textContent = "Date Field Required";
+                dateError.style.color = "red";
+                isValid = false;
+            }
+            else {
+                let today = new Date();
+                today.setHours(0, 0, 0, 0);
+                let selectedDate = new Date(date.value);
+                if (selectedDate > today) {
+                    dateError.textContent = "Date cannot be in the future";
+                    dateError.style.color = "red";
+                    isValid = false;
+                }
+            }
+
+             if (!emailPattern.test(email.value)) {
+                emailError.textContent = "Invalid Email";
+                emailError.style.color = "red";
+                isValid = false;
+            }
+            if(email.value !==conEmail.value){
+                conEmailError.textContent = "Emails do not match";
+                conEmailError.style.color = "red";
+                isValid = false;
+            }
+
+             if (!passPattern.test(pass.value)) {
+                passError.textContent = "Invalid Password";
+                passError.style.color = "red";
+                isValid = false;
+            }
+
+            if(pass.value!==conpass.value){
+                conPassError.textContent = "Passwords do not match";
+                conPassError.style.color = "red";
+                isValid = false; 
+            }
+
+            if(!isValid){
+                msg.style.color = "red";
+            }else{
+                myform.submit();
+                alert("Data submitted succefully");
+            }
+        })
+
+    </script>
+</body>
+
+</html>
